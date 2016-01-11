@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20150730031818) do
     t.string   "user_type"
     t.string   "username"
     t.string   "action"
-    t.text     "audited_changes", limit: 16777215
-    t.integer  "version",                          default: 0
+    t.text     "audited_changes"
+    t.integer  "version",         default: 0
     t.string   "comment"
     t.string   "remote_address"
     t.datetime "created_at"
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 20150730031818) do
   add_index "audits", ["user_id", "user_type"], name: "user_index", using: :btree
 
   create_table "delayed_jobs", force: true do |t|
-    t.integer  "priority",                    default: 0
-    t.integer  "attempts",                    default: 0
-    t.text     "handler",    limit: 16777215
-    t.text     "last_error", limit: 16777215
+    t.integer  "priority",   default: 0
+    t.integer  "attempts",   default: 0
+    t.text     "handler"
+    t.text     "last_error"
     t.datetime "run_at"
     t.datetime "locked_at"
     t.datetime "failed_at"
@@ -156,8 +156,8 @@ ActiveRecord::Schema.define(version: 20150730031818) do
 
   create_table "newsletters", force: true do |t|
     t.integer  "nonprofit_id"
-    t.text     "donor_generated",      limit: 16777215
-    t.text     "subscriber_generated", limit: 16777215
+    t.text     "donor_generated"
+    t.text     "subscriber_generated"
     t.datetime "donors_sent_at"
     t.datetime "subscribers_sent_at"
     t.datetime "created_at"
@@ -167,13 +167,13 @@ ActiveRecord::Schema.define(version: 20150730031818) do
   create_table "nonprofits", force: true do |t|
     t.string   "name"
     t.string   "nfg_name"
-    t.text     "description",        limit: 16777215
+    t.text     "description"
     t.string   "blurb"
     t.string   "website_url"
     t.string   "slug"
     t.date     "featured_on"
     t.string   "ein"
-    t.boolean  "is_public",                           default: false
+    t.boolean  "is_public",          default: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"

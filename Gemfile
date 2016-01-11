@@ -40,6 +40,7 @@ gem 'nav_lynx'
 
 group :test, :development do
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :test do

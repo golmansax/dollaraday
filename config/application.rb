@@ -34,8 +34,9 @@ module DollarADay
       Rails.logger.info 'Loading ruby extensions'
       Dir["#{Rails.root}/lib/core_ext/**/*.rb"].each do |f| require f end
       Dir["#{Rails.root}/lib/ext/**/*.rb"].each do |f| require f end
-      Dir["#{Rails.root}/lib/network_for_good.rb"].each do |f| require f end
-      Dir["#{Rails.root}/lib/network_for_good/*.rb"].each do |f| require f end
+      # TODO(@holman): Figure out what to do with this
+      # Dir["#{Rails.root}/lib/network_for_good.rb"].each do |f| require f end
+      # Dir["#{Rails.root}/lib/network_for_good/*.rb"].each do |f| require f end
     end
   end
 end
