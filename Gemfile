@@ -23,7 +23,6 @@ gem 'redis-objects', '~> 0.5.3'
 gem 'rest-client', '~> 1.6.9'
 gem 'savon', '~> 2.5.1'
 gem 'stripe', '~> 1.22.0'
-gem 'unicorn'
 
 # Assets
 gem 'autoprefixer-rails'
