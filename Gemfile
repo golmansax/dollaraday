@@ -65,7 +65,12 @@ group :development do
   gem 'guard-pow', require: false
 end
 
-group :development, :staging do
-  gem 'capistrano', '3.4.0',        require: false
-  gem 'capistrano-rails', '~> 1.1.3', require: false
+# Use Heroku for now
+# group :development, :staging do
+#   gem 'capistrano', '3.4.0',        require: false
+#   gem 'capistrano-rails', '~> 1.1.3', require: false
+# end
+
+group :production do
+  gem 'passenger'
 end
