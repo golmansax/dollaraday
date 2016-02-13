@@ -73,19 +73,20 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # To enable CORS for CF and S3: http://www.holovaty.com/writing/cors-ie-cloudfront/
-  config.action_controller.asset_host = CONFIG[:cloudfront_hostname]
-  config.action_mailer.asset_host = "https://#{CONFIG[:cloudfront_hostname]}"
+  # config.action_controller.asset_host = CONFIG[:cloudfront_hostname]
+  # config.action_mailer.asset_host = "https://#{CONFIG[:cloudfront_hostname]}"
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
-  DollarADay::Application.config.middleware.use ExceptionNotification::Rack,
-    email: {
-      email_prefix: "[#{CONFIG[:name]}] ",
-      sender_address: %{"#{CONFIG[:name]} Notifier" <#{CONFIG[:developer_email]}>},
-      exception_recipients: CONFIG[:developer_email],
-      email_headers: {"X-Mailgun-Track" => "no"}
-    }
+  # TODO(holman): enable this
+  # DollarADay::Application.config.middleware.use ExceptionNotification::Rack,
+  #   email: {
+  #     email_prefix: "[#{CONFIG[:name]}] ",
+  #     sender_address: %{"#{CONFIG[:name]} Notifier" <#{CONFIG[:developer_email]}>},
+  #     exception_recipients: CONFIG[:developer_email],
+  #     email_headers: {"X-Mailgun-Track" => "no"}
+  #   }
 
 
   # Do not dump schema after migrations.
